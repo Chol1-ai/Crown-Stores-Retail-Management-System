@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director Dashboard - CSRMS</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/report-print.css">
+</head>
+<body>
+    <!-- Director dashboard with overview, sales, inventory, procurement reports -->
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Crown Stores Logo" class="header-logo">
+                <span>Crown Stores CSRMS</span>
+            </div>
+            <div class="user-info">
+                <span id="userName"></span>
+                <div class="user-avatar" id="userAvatar" title="User Profile">U</div>
+                <button id="logoutBtn" class="btn btn-logout">Logout</button>
+            </div>
+        </header>
+        
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#" class="active" data-section="overview">Overview</a></li>
+                <li><a href="#" data-section="sales">Sales Reports</a></li>
+                <li><a href="#" data-section="inventory">Inventory Reports</a></li>
+                <li><a href="#" data-section="procurement">Procurement Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <section id="overview" class="section active">
+                <h2>Company Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Sales</h3>
+                        <p id="totalSales" class="stat-value">UGX 0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Inventory Value</h3>
+                        <p id="inventoryValue" class="stat-value">UGX 0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Procurement</h3>
+                        <p id="totalProcurement" class="stat-value">UGX 0</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sales Report Section -->
+            <section id="sales" class="section">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h2>Sales Report</h2>
+                    <button class="btn btn-primary" onclick="exportSalesPDF()" style="background:#e74c3c;">Export PDF</button>
+                </div>
+                <div class="report-controls">
+                    <input type="date" id="salesDate">
+                    <button class="btn btn-primary" id="generateSalesReport">Generate Report</button>
+                </div>
+                <table class="data-table" id="salesTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+            
+            <!-- Inventory Report Section -->
+            <section id="inventory" class="section">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h2>Inventory Report</h2>
+                    <button class="btn btn-primary" onclick="exportInventoryPDF()" style="background:#e74c3c;">Export PDF</button>
+                </div>
+                <table class="data-table" id="inventoryTable">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+            
+            <!-- Procurement Report Section -->
+            <section id="procurement" class="section">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h2>Procurement Report</h2>
+                    <button class="btn btn-primary" onclick="exportProcurementPDF()" style="background:#e74c3c;">Export PDF</button>
+                </div>
+                <table class="data-table" id="procurementTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Product</th>
+                            <th>Supplier</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/director-dashboard.js"></script>
+</body>
+</html>

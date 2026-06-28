@@ -1,0 +1,239 @@
+/* CSS Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page body with background and centering */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../images/login.pgn.jpg');
+    background-size: cover;
+    background-position: center;
+   margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Login container wrapper */
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+/* Login card white background */
+.login-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 36px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Logo section layout */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.logo-img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 3px solid #1a2a6c;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 20px rgba(26, 42, 108, 0.25);
+}
+
+.logo-text {
+    text-align: center;
+}
+
+.logo h1 {
+    color: #1a2a6c;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.logo p {
+    color: #666;
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+/* Login form styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Form label and input groups */
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: #fafafa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1a2a6c;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+/* Password field with toggle visibility button */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: left;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding: 12px 44px 12px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: #fafafa;
+}
+
+.password-wrapper input:focus {
+    outline: none;
+    border-color: #1a2a6c;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.1);
+}
+
+.password-wrapper .toggle-password {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    z-index: 10;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    line-height: 1;
+}
+
+.password-wrapper .toggle-password:hover {
+    opacity: 1;
+}
+
+/* Remember me and forgot password options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #555;
+    font-weight: 400;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #1a2a6c;
+}
+
+.forgot-password {
+    color: #1a2a6c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+/* Primary login button */
+.btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.btn-primary {
+    background: #1a2a6c;
+    color: white;
+    margin-top: 4px;
+}
+
+.btn-primary:hover {
+    background: #2c3e50;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(26, 42, 108, 0.35);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Error message box for login failures */
+.error-message {
+    margin-top: 16px;
+    color: #e74c3c;
+    text-align: center;
+    font-size: 13px;
+    display: none;
+    padding: 10px;
+    background: #fef0ef;
+    border-radius: 6px;
+    font-weight: 500;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRMS - Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Crown Stores Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>Crown Stores</h1>
+                    <p>Retail Management System</p>
+                </div>
+            </div>
+            <form id="loginForm" class="login-form">
+                <!-- Username field -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <!-- Password field with show/hide toggle -->
+                <div class="password-wrapper">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="toggle-password" id="togglePassword">&#128065;</span>
+                </div>
+                <!-- Remember me and forgot password options -->
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+                </div>
+                <!-- Submit login button -->
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <!-- Error message display area -->
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+</html>

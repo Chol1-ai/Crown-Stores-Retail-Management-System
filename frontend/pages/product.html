@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management - CSRMS</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/product.css">
+</head>
+<body>
+    <!-- Product management page - CRUD and stock adjustments -->
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Crown Stores Logo" class="header-logo">
+                <span>Crown Stores CSRMS</span>
+            </div>
+            <div class="user-info">
+                <span id="userName"></span>
+                <div class="user-avatar" id="userAvatar" title="User Profile">U</div>
+                <button id="logoutBtn" class="btn btn-logout">Logout</button>
+            </div>
+        </header>
+        
+        <nav class="sidebar">
+            <ul>
+                <li><a href="manager-dashboard.html">Dashboard</a></li>
+                <li><a href="#" class="active" data-section="products">Products</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <section class="section active">
+                <h2>Product Management</h2>
+                <button class="btn btn-primary" id="addProductBtn">Add Product</button>
+                <table class="data-table" id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Cost Price</th>
+                            <th>Selling Price</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Add Product</h3>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="productCategory" required></select>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="productDesc"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Cost Price</label>
+                    <input type="number" id="costPrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Selling Price</label>
+                    <input type="number" id="sellingPrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Reorder Level</label>
+                    <input type="number" id="reorderLevel" required>
+                </div>
+                <div class="form-group">
+                    <label>Barcode</label>
+                    <input type="text" id="barcode">
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Stock Adjustment Modal -->
+    <div id="stockAdjustModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('stockAdjustModal').style.display='none'">&times;</span>
+            <h3>Adjust Stock</h3>
+            <p>Product: <strong id="stockProductName"></strong></p>
+            <p>Current Stock: <strong id="stockCurrent"></strong></p>
+            <form id="stockAdjustForm">
+                <input type="hidden" id="stockAdjustId">
+                <div class="form-group">
+                    <label>New Stock Quantity</label>
+                    <input type="number" id="stockNewQuantity" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label>Reason (optional)</label>
+                    <textarea id="stockReason"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Adjustment</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/product.js"></script>
+</body>
+</html>

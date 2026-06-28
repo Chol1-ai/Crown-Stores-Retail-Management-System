@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Management - CSRMS</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/category.css">
+</head>
+<body>
+    <!-- Category management page layout -->
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Crown Stores Logo" class="header-logo">
+                <span>Crown Stores CSRMS</span>
+            </div>
+            <div class="user-info">
+                <span id="userName"></span>
+                <div class="user-avatar" id="userAvatar" title="User Profile">U</div>
+                <button id="logoutBtn" class="btn btn-logout">Logout</button>
+            </div>
+        </header>
+        
+        <nav class="sidebar">
+            <ul>
+                <li><a href="manager-dashboard.html">Dashboard</a></li>
+                <li><a href="#" class="active" data-section="categories">Categories</a></li>
+            </ul>
+            </nav>
+            
+            <!-- Category list and add button -->
+            <main class="main-content">
+            <section class="section active">
+                <h2>Category Management</h2>
+                <button class="btn btn-primary" id="addCategoryBtn">Add Category</button>
+                <table class="data-table" id="categoriesTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main-content>
+    </div>
+    
+    <!-- Add/Edit Category Modal -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Add Category</h3>
+            <form id="categoryForm">
+                <input type="hidden" id="categoryId">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="categoryName" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="categoryDesc"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/category.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Management - CSRMS</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/sales.css">
+</head>
+<body>
+    <!-- Sales management page for directors and managers -->
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Crown Stores Logo" class="header-logo">
+                <span>Crown Stores CSRMS</span>
+            </div>
+            <div class="user-info">
+                <span id="userName"></span>
+                <div class="user-avatar" id="userAvatar" title="User Profile">U</div>
+                <button id="logoutBtn" class="btn btn-logout">Logout</button>
+            </div>
+        </header>
+        
+        <nav class="sidebar">
+            <ul>
+                <li><a href="manager-dashboard.html">Dashboard</a></li>
+                <li><a href="#" class="active" data-section="sales">Sales</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <section class="section active">
+                <h2>Sales Management</h2>
+                <table class="data-table" id="salesTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                            <th>Sales Agent</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/sales.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard - CSRMS</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <!-- Manager dashboard - branch overview stats -->
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Crown Stores Logo" class="header-logo">
+                <span>Crown Stores CSRMS</span>
+            </div>
+            <div class="user-info">
+                <span id="userName"></span>
+                <div class="user-avatar" id="userAvatar" title="User Profile">U</div>
+                <button id="logoutBtn" class="btn btn-logout">Logout</button>
+            </div>
+        </header>
+        
+        <nav class="sidebar">
+            <ul>
+                <li><a href="manager-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="category.html">Categories</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="procurement.html">Procurement</a></li>
+                <li><a href="sales.html">Sales</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <section id="overview" class="section active">
+                <h2>Branch Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Sales Today</h3>
+                        <p id="dailySales" class="stat-value">UGX 0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Inventory Value</h3>
+                        <p id="inventoryValue" class="stat-value">UGX 0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Low Stock Items</h3>
+                        <p id="lowStock" class="stat-value">0</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/manager.js"></script>
+</body>
+</html>
